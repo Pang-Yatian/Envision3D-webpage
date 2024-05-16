@@ -1,0 +1,351 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+    google.load("jquery", "1.3.2");
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./resources/style.css" media="screen" />
+
+<html lang="en">
+
+<head>
+    <title>Envision3D</title>
+    <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/
+          if you update and want to force Facebook to re-scrape. -->
+    <meta property="og:image" content="Path to my teaser.jpg" />
+    <meta property="og:title" content="Envision3D" />
+    <meta property="og:description" content="Paper description." />
+    <!-- Twitter automatically scrapes this. Go to https://cards-dev.twitter.com/validator?
+        if you update and want to force Twitter to re-scrape. -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Envision3D" />
+    <meta property="twitter:description" content="" />
+    <meta property="twitter:image" content="Path to my teaser.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Add your Google Analytics tag here -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97476543-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-97476543-1');
+    </script>
+
+    <!-- enable math -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <!-- <script>
+        function playVideos() {
+            var videos = document.getElementsByTagName('video');
+            for (var i = 0; i < videos.length; i++) {
+                videos[i].play();
+            }
+        }
+
+        function pauseVideos() {
+            var videos = document.getElementsByTagName('video');
+            for (var i = 0; i < videos.length; i++) {
+                videos[i].pause();
+            }
+        }
+    </script> -->
+    <style>
+        .new-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-left: 75px;
+            /* align-items: center; */
+        }
+        .new-container2 {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-left: 30px;
+            /* align-items: center; */
+        }
+        .new-container3 {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-left: 106px;
+            /* align-items: center; */
+        }
+        .new-container4 {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-left: 60px;
+            /* align-items: center; */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="title" display="block">
+            <b>
+                Envision3D:  One Image to 3D
+                <br>
+                with Anchor Views Interpolation
+            </b>
+        </div>
+
+        <!-- <h2>Yatian Pang, Tanghui Jia, Yujun Shi, Zhenyu Tang, Junwu Zhang,<br>
+             Xinhua Cheng, Xing Zhou, Francis E.H. Tay, Li Yuan</h2> -->
+
+        <br><br>
+        <div class="author">
+            <a href="https://scholar.google.com/citations?user=AZQyNWkAAAAJ&hl=en">Yatian Pang</a><sup>3</sup>
+        </div>
+        <div class="author">
+            Tanghui Jia<sup>1</sup>
+        </div>
+        <div class="author">
+            Yujun Shi<sup>3</sup>
+        </div>
+        <div class="author">
+            Zhenyu Tang<sup>1</sup>
+        </div>
+        <div class="author">
+            Junwu Zhang<sup>1</sup>
+        </div>
+        <div class="author">
+            Xinhua Cheng<sup>1</sup>
+        </div>
+        <div class="author">
+            Xing Zhou<sup>4</sup>
+        </div>
+        <div class="author">
+            Francis E.H. Tay<sup>3</sup>
+        </div>
+        <div class="author">
+            <a href="https://yuanli2333.github.io/">Li Yuan</a><sup>1,2</sup>
+        </div>
+    
+        <br><br>
+    
+        <div class="affiliation">
+            <!-- <sup>1&nbsp;</sup>National University of Singapore&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>2&nbsp;</sup>Peking University -->
+            <sup>1&nbsp;</sup>School of Electronic and Computer Engineering, Peking University&nbsp;&nbsp;&nbsp;   
+             <br><sup>2&nbsp;</sup>PengCheng Laboratory&nbsp;&nbsp;&nbsp; 
+             <br><sup>3&nbsp;</sup>National University of Singapore&nbsp;&nbsp;&nbsp; 
+             <br><sup>4&nbsp;  </sup>Rabbitpre&nbsp;&nbsp;
+        </div>
+
+        <br><br>
+        <div class="links"><a href="https://arxiv.org/abs/2403.08902">[Paper]</a></div>
+        <div class="links"><a href="https://github.com/PKU-YuanGroup/Envision3D">[Code]</a></div>
+        <!-- <div class="links"><a href="https://www.bilibili.com/video/BV1wX4y1p7Ns/?vd_source=fa65719b2d4e7994ab64a631336a3a99#reply360690777">[Video]</a></div> -->
+         
+
+        <!-- <div class="venue">
+            In Conference 20XX
+        </div> -->
+
+        <br><br>
+
+        <h1>Abstract</h1>
+        <p style="width: 80%;text-align: justify">
+            We present Envision3D, a novel method for efficiently generating high-quality 3D content from a single image. 
+            Recent methods that extract 3D content from multi-view images generated by diffusion
+            models show great potential. However, it is still challenging for diffusion
+            models to generate dense multi-view consistent images, which is crucial for 
+            the quality of 3D content extraction. To address this issue, we propose a 
+            novel cascade diffusion framework, which decomposes the challenging dense views 
+            generation task into two tractable stages, namely anchor views generation and 
+            anchor views interpolation. In the first stage, 
+            we train the image diffusion model to generate global consistent anchor 
+            views conditioning on image-normal pairs. Subsequently, leveraging our 
+            video diffusion model fine-tuned on consecutive multi-view images, we 
+            conduct interpolation on the previous anchor views to generate extra 
+            dense views. This framework yields dense, multi-view consistent images, 
+            providing comprehensive 3D information. To further enhance the overall 
+            generation quality, we introduce a coarse-to-fine sampling strategy for 
+            the reconstruction algorithm to robustly extract textured meshes from 
+            the generated dense images. Extensive experiments demonstrate that our 
+            method is capable of generating high-quality 3D content in terms of texture
+            and geometry, surpassing previous image-to-3D baseline methods.
+        </p>
+        <br>
+        <hr>
+        <br>
+
+        <!-- <hr> -->
+        <!-- <h1>Motivation</h1> -->
+        <!-- <div class="img-with-text">
+            <img width="800" src="./resources/teaser.jpg" />
+        </div>
+        <br><br> -->
+        <div class="new-container">
+            <div class="img-with-text">
+                <img width="800" src="./resources/teaser.jpg">
+            </div>
+            <div class="video-container">
+                <video muted autoplay="autoplay" loop="loop" width="160" height="160" controls>
+                    <source src="./resources/0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="160" height="160" controls>
+                    <source src="./resources/einstein0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="160" height="160" controls>
+                    <source src="./resources/apple0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="160" height="160" controls>
+                    <source src="./resources/pika0001-0120.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <br><br>
+        <p style="width: 80%;text-align: justify">
+            Envision3D generates dense views and extracts high-quality 3D content from one input image.
+        </p>
+        <br>
+        <hr>
+
+        <h1>Method</h1>
+        <div class="new-container2">
+            <div class="img-with-text">
+                <img width="600" src="./resources/method.png" />
+            </div>
+            <div class="img-with-text">
+                <img width="600" src="./resources/method2.png" />
+            </div>
+        </div>
+        <!-- <div class="img-with-text">
+            <img width="900" src="./resources/method.png" />
+        </div> -->
+        <br><br>
+        <p style="width: 80%;text-align: justify">
+            Given an input image, Stage I first generates aligned anchor view images with aligned normal maps. Then based on generated anchor view images, Stage II interpolates between anchor views to generate dense views. Finally, 3D content is generated through
+            textured mesh extraction.
+        </p>
+        <br>
+        <hr>
+
+
+        <h1>Results</h1>
+        <!-- <h2>General objects</h2> -->
+        <div class="new-container3">
+            <div class="img-with-text">
+                <img width="800" src="./resources/result1.jpg">
+            </div>
+            <div class="video-container2">
+                <video muted autoplay="autoplay" loop="loop" width="78" height="78.2" controls>
+                    <source src="./resources/dear0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="78.2" height="78.6" controls>
+                    <source src="./resources/trex0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="78" height="78.6" controls>
+                    <source src="./resources/hammer0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="78" height="78.6" controls>
+                    <source src="./resources/batman0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="78" height="78.6" controls>
+                    <source src="./resources/dragon0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="78" height="78.6" controls>
+                    <source src="./resources/gun0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="78" height="78" controls>
+                    <source src="./resources/tree0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="78" height="78" controls>
+                    <source src="./resources/crane0001-0120.mp4" type="video/mp4">
+                </video>                
+            </div>
+        </div>
+        
+        <br>
+        <hr>
+
+
+        <h1>Comparison</h1>
+
+        <!-- <h2>Comparison</h2> -->
+        <div class="new-container3">
+            <div class="img-with-text">
+                <img width="800" src="./resources/result2.jpg">
+            </div>
+            <div class="video-container3">
+                <video muted autoplay="autoplay" loop="loop" width="100" height="101" controls>
+                    <source src="./resources/teapot0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100" height="101" controls>
+                    <source src="./resources/chiicken0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100" height="101" controls>
+                    <source src="./resources/sofa0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100" height="101" controls>
+                    <source src="./resources/bus0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100" height="101" controls>
+                    <source src="./resources/duola0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="100" height="101" controls>
+                    <source src="./resources/house0001-0120.mp4" type="video/mp4">
+                </video>              
+            </div>
+        </div>
+        <!-- <img style="width: 80%;" src="./resources/result2.jpg" alt="Results figure" /> -->
+
+        <br>
+        <hr>
+
+        <h1>Additional Results</h1>
+        <div class="new-container4">
+            <div class="img-with-text">
+                <img width="900" src="./resources/result4.png">
+            </div>
+            <div class="video-container4">
+                <video muted autoplay="autoplay" loop="loop" width="99" height="97" controls>
+                    <source src="./resources/girl0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="99" height="97" controls>
+                    <source src="./resources/hulk0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="98" height="96" controls>
+                    <source src="./resources/deadpool0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="98" height="96" controls>
+                    <source src="./resources/cat20001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="99" height="97" controls>
+                    <source src="./resources/naruto0001-0120.mp4" type="video/mp4">
+                </video>   
+                <video muted autoplay="autoplay" loop="loop" width="99" height="97" controls>
+                    <source src="./resources/anime0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="99" height="97" controls>
+                    <source src="./resources/dog0001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="98" height="96" controls>
+                    <source src="./resources/cat10001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="98" height="96" controls>
+                    <source src="./resources/dog20001-0120.mp4" type="video/mp4">
+                </video>
+                <video muted autoplay="autoplay" loop="loop" width="99" height="97" controls>
+                    <source src="./resources/yoda0001-0120.mp4" type="video/mp4">
+                </video>          
+            </div>
+        </div>
+        <!-- <img style="width: 80%;" src="./resources/result4.png" alt="Results figure" /> -->
+
+
+        <br><br>
+    </div>
+
+</body>
+
+</html>
